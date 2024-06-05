@@ -31,6 +31,7 @@ html {
     height: 3rem;
     background-color: #000000;
     border-radius: 50%;
+    box-shadow: 7px 10px 28px rgba(0, 0, 0, 1);
     transform: translate(-50%, -50%);
     position: absolute;
     cursor: pointer;
@@ -45,22 +46,24 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--primary-color);
-    padding: 20px;
+    padding: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
     border-radius: 10px;
     z-index: 1000;
     text-align: center;
     width: 80%;
-    max-width: 650px;
+    max-width: 750px;
+    max-height: 500px;
+    overflow: auto;
 }
 
 .popup-box__close {
     position: absolute;
-    top: 10px;
+    top: 0px;
     right: 10px;
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 25px;
     cursor: pointer;
 
 }
@@ -74,12 +77,11 @@ html {
 
 .popup-box__box {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    width: 100px;
-    padding: 10px;
-    margin: 10px 0;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 150px;
+    max-width: 250px;
     background-color: var(--secundary-color);
     color: var(--first-font-color);
     font-size: var(--font-general-size);
@@ -87,12 +89,24 @@ html {
     border-radius: 5px;
     cursor: pointer;
     flex-grow: 1;
+    overflow: hidden;
+}
+
+.popup-box__box h2 {
+    font-size: var(--font-general-size);
+    padding: 5px;
+}
+
+.popup-box__box p {
+    font-size: var(--font-general-size);
+    padding: 5px;
 }
 
 .popup-box__box img {
+    display: flex;
     max-width: 100%;
     height: auto;
-    margin: 5px;
+    align-self: flex-end;
 }
 
 .popup-box__box:hover {
